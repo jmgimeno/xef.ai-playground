@@ -1,5 +1,6 @@
-@main def hello: Unit =
-  println("Hello world!")
-  println(msg)
+import com.xebia.functional.xef.scala.auto.*
 
-def msg = "I was compiled by Scala 3. :)"
+@main def runBook: Unit = ai {
+  val topic: String = "functional programming"
+  promptMessage(s"Give me a selection of books about $topic")
+}.getOrElse(ex => println(ex.getMessage))
